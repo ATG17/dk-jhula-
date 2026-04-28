@@ -3,36 +3,16 @@
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-
-<!-- ============================================================
-  ✏️ EDIT #1 — PAGE TITLE (shown in browser tab)
-  Change "DK Jhula — Handcrafted with Love" to anything you want
-============================================================ -->
 <title>DK Jhula — Handcrafted with Love</title>
-
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,600&family=Jost:wght@300;400;500&display=swap" rel="stylesheet"/>
 <style>
 :root {
-  /* ============================================================
-     ✏️ EDIT #2 — WEBSITE COLORS
-     Change these color codes to update the whole website's look.
-     --brown-dark  = main dark color (buttons, navbar)
-     --gold        = accent/highlight color
-     --cream       = page background
-     Use any color codes from: https://htmlcolorcodes.com
-  ============================================================ */
-  --cream: #FAF6F0;
-  --warm-white: #FDF9F4;
-  --brown-dark: #3D1C08;
-  --brown-mid: #6B3A1F;
-  --brown-light: #A0622A;
-  --gold: #C49A3C;
-  --gold-light: #E8C97A;
-  --beige: #E8DDD0;
-  --beige-mid: #D4C4B0;
-  --text-dark: #2C1505;
-  --text-mid: #5A3820;
-  --text-light: #9A7B60;
+  --cream: #FAF6F0; --warm-white: #FDF9F4;
+  --brown-dark: #3D1C08; --brown-mid: #6B3A1F; --brown-light: #A0622A;
+  --gold: #C49A3C; --gold-light: #E8C97A;
+  --beige: #E8DDD0; --beige-mid: #D4C4B0;
+  --text-dark: #2C1505; --text-mid: #5A3820; --text-light: #9A7B60;
+  --saffron: #E06500; --saffron-light: #FFF6EC;
   --font-display: 'Cormorant Garamond', Georgia, serif;
   --font-body: 'Jost', sans-serif;
 }
@@ -40,43 +20,36 @@
 html { scroll-behavior: smooth; }
 body { font-family: var(--font-body); background: var(--cream); color: var(--text-dark); overflow-x: hidden; }
 
-nav {
-  position: sticky; top: 0; z-index: 100;
-  background: var(--warm-white); border-bottom: 1px solid var(--beige);
-  display: flex; align-items: center; justify-content: space-between; padding: 10px 40px;
+/* ── BLESSING BANNER ── */
+.blessing-banner {
+  background: #FFF8EE; border-bottom: 2px solid #E8C060;
+  padding: 16px 60px; text-align: center; position: relative;
 }
+.blessing-banner::before { content: '🙏'; position: absolute; left: 24px; top: 50%; transform: translateY(-50%); font-size: 20px; }
+.blessing-banner::after  { content: '🙏'; position: absolute; right: 24px; top: 50%; transform: translateY(-50%); font-size: 20px; }
+.blessing-main { font-family: var(--font-display); font-size: 19px; font-weight: 600; color: #7A3800; letter-spacing: 1px; margin-bottom: 3px; }
+.blessing-sub  { font-size: 13px; color: #A0622A; line-height: 1.55; }
+.blessing-jai  { font-family: var(--font-display); font-size: 15px; font-weight: 600; color: var(--saffron); margin-top: 5px; letter-spacing: 1.5px; }
+
+/* ── NAVBAR ── */
+nav { position: sticky; top: 0; z-index: 100; background: var(--warm-white); border-bottom: 1px solid var(--beige); display: flex; align-items: center; justify-content: space-between; padding: 10px 40px; }
 .nav-logo { display: flex; align-items: center; gap: 12px; }
 .nav-logo-img { width: 64px; height: 64px; border-radius: 50%; object-fit: cover; border: 2px solid var(--gold); }
 .nav-brand-name { font-family: var(--font-display); font-size: 22px; font-weight: 600; color: var(--brown-dark); }
-.nav-brand-owner { font-size: 11px; color: var(--text-light); font-style: italic; letter-spacing: 0.5px; }
+.nav-brand-owner { font-size: 11px; color: var(--text-light); font-style: italic; }
 .nav-brand-tag { font-size: 10px; color: var(--gold); letter-spacing: 2px; text-transform: uppercase; }
 .nav-links { display: flex; gap: 28px; list-style: none; }
 .nav-links a { font-size: 12px; letter-spacing: 1.5px; text-transform: uppercase; color: var(--text-mid); text-decoration: none; transition: color 0.2s; }
 .nav-links a:hover { color: var(--brown-dark); }
-.btn-wa {
-  display: flex; align-items: center; gap: 8px; background: #25D366; color: white;
-  padding: 9px 18px; border-radius: 6px; font-size: 13px; font-weight: 500;
-  text-decoration: none; letter-spacing: 0.5px; transition: opacity 0.2s;
-}
+.btn-wa { display: flex; align-items: center; gap: 8px; background: #25D366; color: white; padding: 9px 18px; border-radius: 6px; font-size: 13px; font-weight: 500; text-decoration: none; transition: opacity 0.2s; }
 .btn-wa:hover { opacity: 0.88; }
 .btn-wa svg { width: 16px; height: 16px; }
-.hero {
-  min-height: 88vh; background: var(--warm-white);
-  display: grid; grid-template-columns: 1fr 1fr;
-  align-items: center; padding: 60px 40px 60px 60px; gap: 40px;
-  position: relative; overflow: hidden;
-}
-.hero::before {
-  content: ''; position: absolute; top: -60px; right: -60px;
-  width: 500px; height: 500px; border-radius: 50%;
-  background: var(--beige); opacity: 0.35; pointer-events: none;
-}
+
+/* ── HERO ── */
+.hero { min-height: 88vh; background: var(--warm-white); display: grid; grid-template-columns: 1fr 1fr; align-items: center; padding: 60px 40px 60px 60px; gap: 40px; position: relative; overflow: hidden; }
+.hero::before { content: ''; position: absolute; top: -60px; right: -60px; width: 500px; height: 500px; border-radius: 50%; background: var(--beige); opacity: 0.35; pointer-events: none; }
 .hero-left { position: relative; z-index: 1; }
-.hero-eyebrow {
-  display: inline-flex; align-items: center; gap: 8px;
-  background: var(--beige); border-radius: 20px; padding: 6px 16px; margin-bottom: 24px;
-  font-size: 12px; letter-spacing: 2px; text-transform: uppercase; color: var(--brown-mid); font-weight: 500;
-}
+.hero-eyebrow { display: inline-flex; align-items: center; gap: 8px; background: var(--beige); border-radius: 20px; padding: 6px 16px; margin-bottom: 24px; font-size: 12px; letter-spacing: 2px; text-transform: uppercase; color: var(--brown-mid); font-weight: 500; }
 .hero-eyebrow::before { content: '✦'; color: var(--gold); }
 .hero h1 { font-family: var(--font-display); font-size: 54px; font-weight: 600; line-height: 1.1; color: var(--brown-dark); margin-bottom: 10px; }
 .hero h1 em { color: var(--gold); font-style: italic; }
@@ -88,45 +61,37 @@ nav {
 .stat-num { font-family: var(--font-display); font-size: 32px; font-weight: 600; color: var(--brown-dark); line-height: 1; }
 .stat-label { font-size: 11px; color: var(--text-light); text-transform: uppercase; letter-spacing: 1.5px; margin-top: 4px; }
 .hero-btns { display: flex; gap: 14px; flex-wrap: wrap; }
-.btn-primary {
-  padding: 14px 32px; background: var(--brown-dark); color: var(--gold-light);
-  border: none; border-radius: 6px; font-family: var(--font-body); font-size: 13px;
-  letter-spacing: 1.5px; text-transform: uppercase; font-weight: 500;
-  cursor: pointer; text-decoration: none; transition: background 0.2s, transform 0.15s; display: inline-block;
-}
+.btn-primary { padding: 14px 32px; background: var(--brown-dark); color: var(--gold-light); border: none; border-radius: 6px; font-family: var(--font-body); font-size: 13px; letter-spacing: 1.5px; text-transform: uppercase; font-weight: 500; cursor: pointer; text-decoration: none; transition: background 0.2s, transform 0.15s; display: inline-block; }
 .btn-primary:hover { background: var(--brown-mid); transform: translateY(-1px); }
-.btn-outline {
-  padding: 13px 28px; background: transparent; color: var(--brown-dark);
-  border: 1.5px solid var(--brown-dark); border-radius: 6px; font-family: var(--font-body); font-size: 13px;
-  letter-spacing: 1.5px; text-transform: uppercase; font-weight: 500;
-  cursor: pointer; text-decoration: none; transition: all 0.2s; display: inline-block;
-}
+.btn-outline { padding: 13px 28px; background: transparent; color: var(--brown-dark); border: 1.5px solid var(--brown-dark); border-radius: 6px; font-family: var(--font-body); font-size: 13px; letter-spacing: 1.5px; text-transform: uppercase; font-weight: 500; cursor: pointer; text-decoration: none; transition: all 0.2s; display: inline-block; }
 .btn-outline:hover { background: var(--brown-dark); color: var(--gold-light); }
 .hero-right { position: relative; display: flex; justify-content: center; align-items: center; }
-.hero-logo-frame {
-  width: 400px; height: 400px; border-radius: 50%;
-  border: 3px solid var(--gold); background: var(--cream);
-  overflow: hidden; box-shadow: 0 16px 64px rgba(61,28,8,0.12);
-}
+.hero-logo-frame { width: 400px; height: 400px; border-radius: 50%; border: 3px solid var(--gold); background: var(--cream); overflow: hidden; box-shadow: 0 16px 64px rgba(61,28,8,0.12); }
 .hero-logo-frame img { width: 100%; height: 100%; object-fit: cover; border-radius: 50%; }
-.hero-float-badge {
-  position: absolute; bottom: 24px; left: -20px;
-  background: var(--brown-dark); color: var(--gold-light);
-  padding: 12px 20px; border-radius: 10px; font-size: 13px; font-weight: 500;
-}
+.hero-float-badge { position: absolute; bottom: 24px; left: -20px; background: var(--brown-dark); color: var(--gold-light); padding: 12px 20px; border-radius: 10px; font-size: 13px; font-weight: 500; }
 .hero-float-badge span { display: block; font-family: var(--font-display); font-size: 20px; font-weight: 600; color: var(--gold); }
-.trust-bar { background: var(--brown-dark); display: flex; justify-content: center; flex-wrap: wrap; }
-.trust-item { display: flex; align-items: center; gap: 10px; padding: 18px 28px; border-right: 1px solid rgba(255,255,255,0.1); color: var(--gold-light); }
-.trust-item:last-child { border-right: none; }
-.trust-icon { font-size: 20px; }
-.trust-text strong { display: block; font-weight: 500; font-size: 13px; }
-.trust-text span { color: rgba(232,201,122,0.65); font-size: 11px; }
-.features-banner { background: var(--warm-white); padding: 40px; border-bottom: 1px solid var(--beige); }
-.features-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); gap: 24px; }
-.feature-item { display: flex; align-items: flex-start; gap: 12px; }
-.feature-icon { font-size: 26px; flex-shrink: 0; }
-.feature-title { font-weight: 500; color: var(--brown-dark); font-size: 14px; margin-bottom: 3px; }
-.feature-desc { font-size: 12px; color: var(--text-light); line-height: 1.5; }
+
+/* ── PROMISE STRIP ── */
+.promise-strip { background: var(--brown-dark); padding: 18px 40px; display: flex; align-items: center; justify-content: center; gap: 8px; flex-wrap: wrap; }
+.promise-strip-text { font-family: var(--font-display); font-size: 16px; font-style: italic; color: var(--gold-light); letter-spacing: 0.5px; }
+.promise-strip-dot { color: var(--gold); font-size: 18px; }
+
+/* ── WHY DK JHULA ── */
+.why-section { background: var(--warm-white); padding: 56px 40px; border-bottom: 1px solid var(--beige); }
+.why-header { margin-bottom: 40px; }
+.why-header-label { font-size: 11px; letter-spacing: 3px; text-transform: uppercase; color: var(--gold); font-weight: 500; margin-bottom: 8px; }
+.why-header-title { font-family: var(--font-display); font-size: 34px; font-weight: 600; color: var(--brown-dark); line-height: 1.2; }
+.why-header-title em { color: var(--gold); font-style: italic; }
+.why-cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px; }
+.why-card { background: var(--cream); border: 1px solid var(--beige); border-radius: 16px; padding: 28px 24px; position: relative; overflow: hidden; transition: transform 0.2s, box-shadow 0.2s; }
+.why-card:hover { transform: translateY(-3px); box-shadow: 0 10px 32px rgba(61,28,8,0.08); }
+.why-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: linear-gradient(90deg, var(--gold), var(--gold-light)); border-radius: 16px 16px 0 0; }
+.why-card-num { font-family: var(--font-display); font-size: 48px; font-weight: 600; color: var(--beige); line-height: 1; margin-bottom: 12px; }
+.why-card-title { font-weight: 600; color: var(--brown-dark); font-size: 15px; margin-bottom: 8px; }
+.why-card-desc { font-size: 13px; color: var(--text-light); line-height: 1.65; }
+.why-card-quote { font-family: var(--font-display); font-size: 13px; font-style: italic; color: var(--gold); margin-top: 12px; }
+
+/* ── SECTIONS ── */
 section { padding: 72px 40px; }
 .section-label { font-size: 11px; letter-spacing: 3px; text-transform: uppercase; color: var(--gold); font-weight: 500; margin-bottom: 10px; }
 .section-title { font-family: var(--font-display); font-size: 40px; font-weight: 600; color: var(--brown-dark); line-height: 1.2; margin-bottom: 12px; }
@@ -134,25 +99,39 @@ section { padding: 72px 40px; }
 .section-head { margin-bottom: 48px; }
 .section-head.center { text-align: center; }
 .section-head.center .section-sub { margin: 0 auto; }
+
+/* ── PRODUCTS ── */
 .filter-row { display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 36px; }
-.filter-btn {
-  padding: 8px 22px; border: 1.5px solid var(--beige-mid); border-radius: 30px;
-  background: transparent; cursor: pointer; font-family: var(--font-body); font-size: 13px;
-  color: var(--text-light); letter-spacing: 0.5px; transition: all 0.2s;
-}
+.filter-btn { padding: 8px 22px; border: 1.5px solid var(--beige-mid); border-radius: 30px; background: transparent; cursor: pointer; font-family: var(--font-body); font-size: 13px; color: var(--text-light); letter-spacing: 0.5px; transition: all 0.2s; }
 .filter-btn:hover, .filter-btn.active { background: var(--brown-dark); color: var(--gold-light); border-color: var(--brown-dark); }
 .products-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 24px; }
-.product-card {
-  background: var(--warm-white); border: 1px solid var(--beige);
-  border-radius: 14px; overflow: hidden; transition: transform 0.2s, box-shadow 0.2s;
-}
+.product-card { background: var(--warm-white); border: 1px solid var(--beige); border-radius: 14px; overflow: hidden; transition: transform 0.2s, box-shadow 0.2s; }
 .product-card:hover { transform: translateY(-4px); box-shadow: 0 12px 32px rgba(61,28,8,0.1); }
 .product-img { height: 250px; position: relative; background: #fff; overflow: hidden; }
 .product-img img { width: 100%; height: 100%; object-fit: contain; padding: 8px; }
-.product-badge {
-  position: absolute; top: 12px; left: 12px; z-index: 2;
-  font-size: 11px; font-weight: 500; padding: 4px 12px; border-radius: 20px;
-}
+/* ── SLIDER ── */
+.slider-wrap { position: relative; height: 100%; width: 100%; overflow: hidden; }
+.slider-track { display: flex; height: 100%; transition: transform 0.4s cubic-bezier(.4,0,.2,1); }
+.slider-track img { min-width: 100%; height: 100%; object-fit: contain; padding: 8px; flex-shrink: 0; }
+.slider-btn { position: absolute; top: 50%; transform: translateY(-50%); background: rgba(61,28,8,0.55); color: #E8C97A; border: none; width: 28px; height: 28px; border-radius: 50%; cursor: pointer; font-size: 13px; display: flex; align-items: center; justify-content: center; z-index: 3; transition: background 0.2s; }
+.slider-btn:hover { background: rgba(61,28,8,0.85); }
+.slider-btn.prev { left: 8px; }
+.slider-btn.next { right: 8px; }
+.slider-dots { position: absolute; bottom: 7px; left: 50%; transform: translateX(-50%); display: flex; gap: 5px; z-index: 3; }
+.slider-dot { width: 6px; height: 6px; border-radius: 50%; background: rgba(61,28,8,0.25); cursor: pointer; transition: background 0.2s; }
+.slider-dot.active { background: var(--gold); }
+/* ── IMAGE SLIDER ── */
+.slider-wrap { position: relative; width: 100%; height: 100%; }
+.slider-track { display: flex; height: 100%; transition: transform 0.4s cubic-bezier(.4,0,.2,1); will-change: transform; }
+.slider-track img { min-width: 100%; height: 100%; object-fit: contain; padding: 8px; flex-shrink: 0; }
+.slider-btn { position: absolute; top: 50%; transform: translateY(-50%); background: rgba(61,28,8,0.55); border: none; color: #E8C97A; width: 30px; height: 30px; border-radius: 50%; cursor: pointer; font-size: 14px; display: flex; align-items: center; justify-content: center; z-index: 3; transition: background 0.2s; }
+.slider-btn:hover { background: rgba(61,28,8,0.85); }
+.slider-btn.prev { left: 8px; }
+.slider-btn.next { right: 8px; }
+.slider-dots { position: absolute; bottom: 7px; left: 50%; transform: translateX(-50%); display: flex; gap: 5px; z-index: 3; }
+.slider-dot { width: 7px; height: 7px; border-radius: 50%; background: rgba(61,28,8,0.25); border: none; cursor: pointer; padding: 0; transition: background 0.2s; }
+.slider-dot.active { background: var(--gold); }
+.product-badge { position: absolute; top: 12px; left: 12px; z-index: 2; font-size: 11px; font-weight: 500; padding: 4px 12px; border-radius: 20px; }
 .badge-best { background: var(--gold); color: var(--brown-dark); }
 .badge-new { background: #C8E6C9; color: #1B5E20; }
 .badge-sale { background: #FFCDD2; color: #B71C1C; }
@@ -161,12 +140,11 @@ section { padding: 72px 40px; }
 .product-desc { font-size: 11px; color: var(--text-light); line-height: 1.5; margin-bottom: 14px; }
 .product-footer { display: flex; align-items: center; justify-content: space-between; }
 .product-price { font-family: var(--font-display); font-size: 22px; font-weight: 600; color: var(--brown-mid); }
-.order-btn {
-  padding: 8px 18px; background: var(--brown-dark); color: var(--gold-light);
-  border: none; border-radius: 6px; cursor: pointer; font-family: var(--font-body);
-  font-size: 12px; letter-spacing: 1px; text-transform: uppercase; font-weight: 500; transition: background 0.2s;
-}
+.order-btn { padding: 8px 18px; background: var(--brown-dark); color: var(--gold-light); border: none; border-radius: 6px; cursor: pointer; font-family: var(--font-body); font-size: 12px; letter-spacing: 1px; text-transform: uppercase; font-weight: 500; transition: background 0.2s; }
 .order-btn:hover { background: var(--brown-mid); }
+
+
+/* ── ABOUT ── */
 .about-section { background: var(--brown-dark); display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: center; padding: 72px 40px; }
 .about-img { width: 100%; aspect-ratio: 1; border-radius: 50%; overflow: hidden; max-width: 360px; border: 3px solid var(--gold); }
 .about-img img { width: 100%; height: 100%; object-fit: cover; }
@@ -179,6 +157,8 @@ section { padding: 72px 40px; }
 .about-pill { padding: 6px 16px; border: 1px solid var(--gold); border-radius: 20px; color: var(--gold-light); font-size: 12px; letter-spacing: 1px; }
 .about-section .section-label { color: var(--gold); }
 .about-section .section-title { color: var(--gold-light); }
+
+/* ── FEEDBACK ── */
 .feedback-section { background: var(--warm-white); }
 .feedback-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: start; }
 .feedback-form-wrap { background: var(--cream); border: 1px solid var(--beige); border-radius: 16px; padding: 36px; }
@@ -186,20 +166,13 @@ section { padding: 72px 40px; }
 .feedback-form-sub { font-size: 13px; color: var(--text-light); margin-bottom: 28px; }
 .form-group { margin-bottom: 16px; }
 .form-group label { display: block; font-size: 11px; letter-spacing: 1px; text-transform: uppercase; color: var(--text-mid); font-weight: 500; margin-bottom: 6px; }
-.form-group input, .form-group textarea {
-  width: 100%; padding: 11px 14px; border: 1.5px solid var(--beige-mid); border-radius: 8px;
-  background: var(--warm-white); color: var(--text-dark); font-family: var(--font-body); font-size: 14px; outline: none; transition: border-color 0.2s;
-}
+.form-group input, .form-group textarea { width: 100%; padding: 11px 14px; border: 1.5px solid var(--beige-mid); border-radius: 8px; background: var(--warm-white); color: var(--text-dark); font-family: var(--font-body); font-size: 14px; outline: none; transition: border-color 0.2s; }
 .form-group input:focus, .form-group textarea:focus { border-color: var(--gold); }
 .form-group textarea { resize: vertical; min-height: 100px; }
 .star-select { display: flex; gap: 6px; margin-bottom: 16px; }
 .star-select span { font-size: 30px; cursor: pointer; color: var(--beige-mid); transition: color 0.15s; user-select: none; }
 .star-select span.active { color: var(--gold); }
-.form-submit {
-  width: 100%; padding: 14px; background: var(--brown-dark); color: var(--gold-light);
-  border: none; border-radius: 8px; font-family: var(--font-body); font-size: 13px;
-  letter-spacing: 1.5px; text-transform: uppercase; font-weight: 500; cursor: pointer; transition: background 0.2s;
-}
+.form-submit { width: 100%; padding: 14px; background: var(--brown-dark); color: var(--gold-light); border: none; border-radius: 8px; font-family: var(--font-body); font-size: 13px; letter-spacing: 1.5px; text-transform: uppercase; font-weight: 500; cursor: pointer; transition: background 0.2s; }
 .form-submit:hover { background: var(--brown-mid); }
 .form-success { display: none; text-align: center; padding: 16px; background: #E8F5E9; border: 1px solid #A5D6A7; border-radius: 8px; color: #2E7D32; font-size: 14px; margin-top: 16px; }
 .feedbacks-list-title { font-family: var(--font-display); font-size: 28px; font-weight: 600; color: var(--brown-dark); margin-bottom: 4px; }
@@ -215,6 +188,12 @@ section { padding: 72px 40px; }
 .feedback-text { font-size: 13px; color: var(--text-mid); line-height: 1.6; font-style: italic; }
 .feedback-date { font-size: 11px; color: var(--text-light); margin-top: 8px; }
 .no-feedback { text-align: center; padding: 40px 20px; color: var(--text-light); font-size: 14px; font-style: italic; }
+.admin-toggle-btn { margin-top: 14px; padding: 7px 16px; background: transparent; border: 1.5px solid var(--beige-mid); border-radius: 20px; font-size: 12px; color: var(--text-light); cursor: pointer; letter-spacing: 0.5px; transition: all 0.2s; }
+.admin-toggle-btn:hover { border-color: var(--brown-mid); color: var(--brown-mid); }
+.admin-del-btn { padding: 4px 10px; background: #FFEBEE; border: 1px solid #FFCDD2; border-radius: 6px; color: #C62828; font-size: 11px; cursor: pointer; font-weight: 500; transition: background 0.2s; }
+.admin-del-btn:hover { background: #FFCDD2; }
+
+/* ── ORDER / FOOTER ── */
 .order-section { background: var(--beige); text-align: center; padding: 72px 40px; }
 .order-cards { display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; margin-top: 40px; }
 .order-card { background: var(--warm-white); border: 1px solid var(--beige-mid); border-radius: 14px; padding: 28px 32px; min-width: 200px; text-align: center; text-decoration: none; transition: transform 0.2s, box-shadow 0.2s; }
@@ -235,40 +214,49 @@ footer { background: var(--text-dark); padding: 40px; display: flex; align-items
 .footer-copy { font-size: 12px; color: rgba(232,201,122,0.35); }
 .toast { position: fixed; bottom: 24px; right: 24px; background: var(--brown-dark); color: var(--gold-light); padding: 14px 24px; border-radius: 8px; font-size: 14px; border: 1px solid var(--gold); opacity: 0; pointer-events: none; transform: translateY(8px); transition: all 0.3s; z-index: 999; }
 .toast.show { opacity: 1; transform: translateY(0); }
+
 @media (max-width: 768px) {
-  nav { padding: 10px 20px; }
-  .nav-links { display: none; }
+  .blessing-banner { padding: 14px 40px; }
+  .blessing-banner::before, .blessing-banner::after { display: none; }
+  nav { padding: 10px 20px; } .nav-links { display: none; }
   .hero { grid-template-columns: 1fr; padding: 40px 20px; min-height: auto; }
-  .hero-right { display: none; }
-  .hero h1 { font-size: 36px; }
+  .hero-right { display: none; } .hero h1 { font-size: 36px; }
   section { padding: 48px 20px; }
-  .about-section { grid-template-columns: 1fr; padding: 48px 20px; }
-  .about-img { display: none; }
+  .about-section { grid-template-columns: 1fr; padding: 48px 20px; } .about-img { display: none; }
   .feedback-grid { grid-template-columns: 1fr; }
   .features-banner { padding: 28px 20px; }
   footer { flex-direction: column; text-align: center; padding: 32px 20px; }
   .trust-item { padding: 14px 16px; }
+  .gratitude-section, .coming-soon-section { padding: 48px 20px; }
 }
 </style>
 </head>
 <body>
 
 <!-- ============================================================
-  ✏️ EDIT #3 — NAVBAR LOGO IMAGE
+  ✏️ BLESSING BANNER — very top of page
+  Edit text here to change the blessing message
+============================================================ -->
+<div class="blessing-banner">
+  <div class="blessing-main">॥ Jay Shree Swaminarayan ॥</div>
+  <div class="blessing-sub">
+    With the blessings of <strong>Bhagwan Swaminarayan </strong>,
+    who guides every step of this journey
+  </div>
+ </div>
+
+<!-- ============================================================
+  ✏️ EDIT #3 — NAVBAR LOGO
   Replace "logo_png.jpg" with your logo file name.
-  Make sure your logo file is in the SAME FOLDER as index.html!
-  Example: src="my_logo.png" or src="dk_logo.jpg"
+  Keep logo file in the SAME FOLDER as index.html!
 ============================================================ -->
 <nav>
   <div class="nav-logo">
     <img class="nav-logo-img" src="logo_png.jpg" alt="DK Jhula Logo"/>
     <div>
-      <!-- ✏️ EDIT #4 — BUSINESS NAME in navbar -->
-      <div class="nav-brand-name">DK Jhula</div>
-      <!-- ✏️ EDIT #5 — OWNER NAME in navbar -->
-      <div class="nav-brand-owner">by Daxaben K. Prajapati</div>
-      <!-- ✏️ EDIT #6 — TAGLINE in navbar -->
-      <div class="nav-brand-tag">Handcrafted with Love</div>
+      <div class="nav-brand-name">DK Jhula</div>                          <!-- ✏️ EDIT #4 Business name -->
+      <div class="nav-brand-owner">by Daxaben K. Prajapati</div>          <!-- ✏️ EDIT #5 Owner name -->
+      <div class="nav-brand-tag">Handcrafted with Love</div>              <!-- ✏️ EDIT #6 Tagline -->
     </div>
   </div>
   <ul class="nav-links">
@@ -278,10 +266,7 @@ footer { background: var(--text-dark); padding: 40px; display: flex; align-items
     <li><a href="#order">Order</a></li>
   </ul>
   <div>
-    <!-- ✏️ EDIT #7 — WHATSAPP BUTTON in navbar
-         Replace 916351551471 with: 91 + your 10-digit number
-         Example: 919876543210 -->
-    <a class="btn-wa" href="https://wa.me/916351551471" target="_blank">
+    <a class="btn-wa" href="https://wa.me/916351551471" target="_blank">  <!-- ✏️ EDIT #7 WhatsApp number -->
       <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
       WhatsApp Order
     </a>
@@ -289,176 +274,116 @@ footer { background: var(--text-dark); padding: 40px; display: flex; align-items
 </nav>
 
 <!-- ============================================================
-  ✏️ EDIT #8 — HERO SECTION (Big banner at top of page)
-  This is the first thing visitors see!
+  ✏️ EDIT #8 — HERO SECTION (main banner)
 ============================================================ -->
 <section class="hero">
   <div class="hero-left">
-    <!-- ✏️ EDIT #9 — Small badge text above headline -->
-    <div class="hero-eyebrow">Handcrafted in India</div>
-
-    <!-- ✏️ EDIT #10 — MAIN HEADLINE
-         The word inside <em>...</em> appears in gold italic -->
-    <h1>Beautiful<br><em>Jhulas</em> &<br>Home Decor</h1>
-
-    <!-- ✏️ EDIT #11 — Owner name shown below headline -->
-    <p class="hero-owner">by <span>Daxaben K. Prajapati</span></p>
-
-    <!-- ✏️ EDIT #12 — SHORT DESCRIPTION under headline -->
+    <div class="hero-eyebrow">Handcrafted in India</div>        <!-- ✏️ EDIT #9 Small badge text -->
+    <h1>Beautiful<br><em>Jhulas</em> &<br>Home Decor</h1>       <!-- ✏️ EDIT #10 Main headline -->
+    <p class="hero-owner">by <span>Daxaben K. Prajapati</span></p>  <!-- ✏️ EDIT #11 Owner name -->
+    <!-- ✏️ EDIT #12 — Short description text -->
     <p class="hero-desc">Each piece is handcrafted using premium resham doori — washable, strong, with warranty. From royal canopy jhulas to baby cradles and artisan décor. Customize colour, design & size. Ships worldwide.</p>
-
-    <!-- ✏️ EDIT #13 — STATS (numbers shown under description) -->
+    <!-- ✏️ EDIT #13 — Stats: change numbers and labels -->
     <div class="hero-stats">
-      <div class="stat">
-        <div class="stat-num">15+</div>        <!-- Change number here -->
-        <div class="stat-label">Years Experience</div>  <!-- Change label here -->
-      </div>
-      <div class="stat">
-        <div class="stat-num">70+</div>         <!-- Change number here -->
-        <div class="stat-label">Happy Customers</div>
-      </div>
-      <div class="stat">
-        <div class="stat-num">5+</div>          <!-- Change number here -->
-        <div class="stat-label">Countries Served</div>
-      </div>
+      <div class="stat"><div class="stat-num">15+</div><div class="stat-label">Years Experience</div></div>
+      <div class="stat"><div class="stat-num">70+</div><div class="stat-label">Happy Customers</div></div>
+      <div class="stat"><div class="stat-num">5+</div><div class="stat-label">Countries Served</div></div>
     </div>
-
     <div class="hero-btns">
       <a href="#shop" class="btn-primary">Shop Now</a>
-      <!-- ✏️ EDIT #14 — WhatsApp number in Custom Order button -->
-      <a href="https://wa.me/916351551471" target="_blank" class="btn-outline">Custom Order</a>
+      <a href="https://wa.me/916351551471" target="_blank" class="btn-outline">Custom Order</a>  <!-- ✏️ EDIT #14 WhatsApp number -->
     </div>
   </div>
-
   <div class="hero-right">
-    <!-- ✏️ EDIT #15 — HERO IMAGE (right side of banner)
-         Replace "logo_png.jpg" with any product photo file name -->
-    <div class="hero-logo-frame">
-      <img src="logo_png.jpg" alt="DK Jhula"/>
-    </div>
-    <!-- ✏️ EDIT #16 — Floating badge on hero image -->
-    <div class="hero-float-badge">
-      <span>DK Jhula</span>Handmade with Love ♥
-    </div>
+    <div class="hero-logo-frame"><img src="logo_png.jpg" alt="DK Jhula"/></div>  <!-- ✏️ EDIT #15 Hero image -->
+    <div class="hero-float-badge"><span>DK Jhula</span>Handmade with Love ♥</div>  <!-- ✏️ EDIT #16 Badge text -->
   </div>
 </section>
 
-<!-- ============================================================
-  ✏️ EDIT #17 — TRUST BAR (dark brown strip of features)
-  Change the text inside <strong> and <span> tags
-============================================================ -->
-<div class="trust-bar">
-  <div class="trust-item">
-    <div class="trust-icon">🚚</div>
-    <div class="trust-text"><strong>Pan-India Delivery</strong><span>Ships to all states</span></div>
-  </div>
-  <div class="trust-item">
-    <div class="trust-icon">🌍</div>
-    <div class="trust-text"><strong>5+ Countries Served</strong><span>Worldwide shipping</span></div>
-  </div>
-  <div class="trust-item">
-    <div class="trust-icon">🧵</div>
-    <div class="trust-text"><strong>Premium Resham Doori</strong><span>Washable & long-lasting</span></div>
-  </div>
-  <div class="trust-item">
-    <div class="trust-icon">💪</div>
-    <div class="trust-text"><strong>150–200 kg Capacity</strong><span>Safe for all ages & sizes</span></div>
-  </div>
-  <div class="trust-item">
-    <div class="trust-icon">🎨</div>
-    <div class="trust-text"><strong>Full Customization</strong><span>Colour, size & design</span></div>
-  </div>
+<!-- PROMISE STRIP -->
+<div class="promise-strip">
+  <span class="promise-strip-text">Every knot tied by hand &nbsp;&middot;&nbsp; Every colour chosen with care &nbsp;&middot;&nbsp; Every jhula made to last a lifetime</span>
 </div>
 
-<!-- ============================================================
-  ✏️ EDIT #18 — FEATURES SECTION (5 icons with text)
-  Change icon emoji, title, and description for each feature
-============================================================ -->
-<div class="features-banner">
-  <div class="features-grid">
-    <div class="feature-item">
-      <div class="feature-icon">🧵</div>  <!-- Change emoji here -->
-      <div>
-        <div class="feature-title">Premium Resham Doori</div>      <!-- Change title -->
-        <div class="feature-desc">High-quality silk-finish rope for strength, shine, and durability.</div>  <!-- Change desc -->
-      </div>
+<!-- WHY DK JHULA -->
+<div class="why-section">
+  <div class="why-header">
+    <div class="why-header-label">Why families choose us</div>
+    <div class="why-header-title">Not just a swing &mdash;<br><em>a piece of our heart.</em></div>
+  </div>
+  <div class="why-cards">
+    <div class="why-card">
+      <div class="why-card-num">15+</div>
+      <div class="why-card-title">Years of Craft</div>
+      <div class="why-card-desc">Daxaben has been knotting resham doori since 2009 &mdash; every technique learned through years of real work, not a YouTube tutorial.</div>
+      <div class="why-card-quote">&ldquo;Haath ka kaam hai, dil se banta hai.&rdquo;</div>
     </div>
-    <div class="feature-item">
-      <div class="feature-icon">🫧</div>
-      <div>
-        <div class="feature-title">Fully Washable</div>
-        <div class="feature-desc">Easy to clean — wash and it's as good as new. Hygienic for the whole family.</div>
-      </div>
+    <div class="why-card">
+      <div class="why-card-num">&#8734;</div>
+      <div class="why-card-title">Rope Warranty &mdash; No Questions</div>
+      <div class="why-card-desc">If the doori breaks on its own, we fix or replace it. Full stop. Because we stand behind every knot we tie.</div>
+      <div class="why-card-quote">&ldquo;If it&apos;s our fault, we fix it.&rdquo;</div>
     </div>
-    <div class="feature-item">
-      <div class="feature-icon">🛡️</div>
-      <div>
-        <div class="feature-title">Rope Warranty</div>
-        <div class="feature-desc">If the doori breaks naturally, we repair or replace it. No questions asked.</div>
-      </div>
+    <div class="why-card">
+      <div class="why-card-num">&#x1FAE7;</div>
+      <div class="why-card-title">Wash It Like Your Clothes</div>
+      <div class="why-card-desc">Real resham doori doesn&apos;t rot or smell. Soak it, wash it, dry it &mdash; good as new. No special cleaning needed.</div>
+      <div class="why-card-quote">&ldquo;Looks new every time you wash it.&rdquo;</div>
     </div>
-    <div class="feature-item">
-      <div class="feature-icon">👨‍👩‍👧‍👦</div>
-      <div>
-        <div class="feature-title">All Ages & Sizes</div>
-        <div class="feature-desc">Holds 150–200 kg. Comfortable and safe for every member of the family.</div>
-      </div>
+    <div class="why-card">
+      <div class="why-card-num">&#x1F3A8;</div>
+      <div class="why-card-title">Your Colour, Your Size</div>
+      <div class="why-card-desc">No two homes are the same. Tell us your wall colour, your room size, your favourite shade &mdash; we&apos;ll make it fit perfectly.</div>
+      <div class="why-card-quote">&ldquo;Aapka ghar, aapki choice.&rdquo;</div>
     </div>
-    <div class="feature-item">
-      <div class="feature-icon">🎨</div>
-      <div>
-        <div class="feature-title">Customize Freely</div>
-        <div class="feature-desc">Choose your colour, design, and size. Every jhula can be made just for you.</div>
-      </div>
+    <div class="why-card">
+      <div class="why-card-num">&#x1F30D;</div>
+      <div class="why-card-title">Anand to the World</div>
+      <div class="why-card-desc">Packed with care in Anand, Gujarat &mdash; shipped across India and to 5+ countries. Your jhula arrives safely, wherever you are.</div>
+      <div class="why-card-quote">&ldquo;Gujarat thi, duniya sudi.&rdquo;</div>
     </div>
   </div>
 </div>
 
 <!-- ============================================================
-  SHOP / PRODUCTS SECTION
-  ✏️ Products are added in the JavaScript section at the BOTTOM
-     Scroll down and look for "EDIT #19 — ADD YOUR PRODUCTS"
+  PRODUCTS SECTION
+  ✏️ To add/edit products scroll to JavaScript below (EDIT #19)
 ============================================================ -->
 <section id="shop">
   <div class="section-head">
     <div class="section-label">Our Collection</div>
-    <!-- ✏️ EDIT: Change shop section heading/description if needed -->
     <div class="section-title">Handcrafted with Love</div>
     <div class="section-sub">Every piece is made by hand using premium resham doori. Fully washable, warranted, and customizable in colour, size & design. Capacity: 150–200 kg.</div>
   </div>
-  <!-- ✏️ EDIT: Add/remove filter buttons to match your categories -->
+  <!-- ✏️ Add/remove filter buttons to match your product categories -->
   <div class="filter-row">
     <button class="filter-btn active" onclick="filterProducts(this,'all')">All Items</button>
     <button class="filter-btn" onclick="filterProducts(this,'jhula')">Jhulas &amp; Swings</button>
     <button class="filter-btn" onclick="filterProducts(this,'baby')">Baby Jhula</button>
     <button class="filter-btn" onclick="filterProducts(this,'decor')">Home Decor</button>
+    <button class="filter-btn" onclick="filterProducts(this,'purse')">Purses &amp; Bags</button>
   </div>
   <div class="products-grid" id="products-grid"></div>
 </section>
 
+
 <!-- ============================================================
   ✏️ EDIT #20 — ABOUT SECTION
-  Change your story, name, description text here
 ============================================================ -->
 <section class="about-section" id="about">
-  <!-- ✏️ EDIT #21 — ABOUT IMAGE
-       Replace "logo_png.jpg" with your own photo if you want -->
-  <div class="about-img"><img src="logo_png.jpg" alt="DK Jhula"/></div>
+  <div class="about-img"><img src="logo_png.jpg" alt="DK Jhula"/></div>  <!-- ✏️ EDIT #21 About image -->
   <div>
     <div class="section-label">Our Story</div>
-    <!-- ✏️ EDIT #22 — About section heading -->
-    <div class="section-title">DK Jhula —<br>A Home Business<br>Built on Craft</div>
+    <div class="section-title">DK Jhula —<br>A Home Business<br>Built on Craft</div>  <!-- ✏️ EDIT #22 Heading -->
     <div class="about-owner-tag">
       <div class="about-owner-label">Owner &amp; Artisan</div>
-      <!-- ✏️ EDIT #23 — Owner name in about section -->
-      <div class="about-owner-name">Daxaben K. Prajapati</div>
+      <div class="about-owner-name">Daxaben K. Prajapati</div>  <!-- ✏️ EDIT #23 Owner name -->
     </div>
-    <!-- ✏️ EDIT #24 — About paragraphs. Change your story here -->
+    <!-- ✏️ EDIT #24 — Your story paragraphs -->
     <p class="about-text">DK Jhula is a small home-based business run with passion from Anand, Gujarat. Every jhula and home decor item is handcrafted using premium resham doori — no factory, no machines. Just skilled hands, a loving heart, and 15+ years of experience.</p>
     <p class="about-text">All products are fully washable and come with a rope warranty. We customize colour, design, and size for any order. Our jhulas hold 150–200 kg and are safe for all ages — from babies to grandparents.</p>
-    <!-- ✏️ EDIT #25 — Quote / highlight text -->
-    <div class="about-highlight">"More than 15 years of craft,<br>delivered to your doorstep."</div>
-    <!-- ✏️ EDIT #26 — Pill/tag badges. Add or remove <div class="about-pill"> lines -->
+    <div class="about-highlight">"More than 15 years of craft,<br>delivered to your doorstep."</div>  <!-- ✏️ EDIT #25 Quote -->
+    <!-- ✏️ EDIT #26 — Pill/tag badges. Add or remove lines as needed -->
     <div class="about-pills">
       <div class="about-pill">15+ Years Experience</div>
       <div class="about-pill">Resham Doori</div>
@@ -467,14 +392,14 @@ footer { background: var(--text-dark); padding: 40px; display: flex; align-items
       <div class="about-pill">Rope Warranty</div>
       <div class="about-pill">Custom Orders Welcome</div>
     </div>
-    <!-- ✏️ EDIT #27 — WhatsApp number in About button -->
-    <a href="https://wa.me/916351551471" class="btn-primary" target="_blank">Chat for product </a>
+    <a href="https://wa.me/916351551471" class="btn-primary" target="_blank">Chat for product</a>  <!-- ✏️ EDIT #27 WhatsApp number -->
   </div>
 </section>
 
+
 <!-- ============================================================
-  REVIEWS SECTION — customers can submit reviews live on the page
-  No editing needed here. Reviews are submitted by customers.
+  REVIEWS SECTION — customers submit live reviews on the page
+  No editing needed here.
 ============================================================ -->
 <section class="feedback-section" id="feedback">
   <div class="section-head center">
@@ -513,31 +438,26 @@ footer { background: var(--text-dark); padding: 40px; display: flex; align-items
 
 <!-- ============================================================
   ✏️ EDIT #28 — ORDER / CONTACT SECTION
-  Update your WhatsApp number, Instagram handle, city
 ============================================================ -->
 <section class="order-section" id="order">
   <div class="section-label">Place an Order</div>
   <div class="section-title">Ready to Order?</div>
   <p class="section-sub" style="margin:0 auto">WhatsApp or Instagram to order, customize, or ask questions. Custom colour, size &amp; design available. Delivering across India and internationally.</p>
   <div class="order-cards">
-    <!-- ✏️ EDIT #29 — WhatsApp number and display number -->
-    <a class="order-card" href="https://wa.me/916351551471" target="_blank">
+    <a class="order-card" href="https://wa.me/916351551471" target="_blank">   <!-- ✏️ EDIT #29 WhatsApp number -->
       <div class="order-card-icon">💬</div>
       <div class="order-card-title">WhatsApp</div>
-      <div class="order-card-sub">+91 63515 51471</div>  <!-- Change display number -->
+      <div class="order-card-sub">+91 63515 51471</div>                        <!-- ✏️ Display number -->
     </a>
-    <!-- ✏️ EDIT #30 — Instagram handle
-         Replace "dkjhula_" with your actual Instagram username -->
-    <a class="order-card" href="https://instagram.com/dkjhula_" target="_blank">
+    <a class="order-card" href="https://instagram.com/dkjhula_" target="_blank">  <!-- ✏️ EDIT #30 Instagram -->
       <div class="order-card-icon">📸</div>
       <div class="order-card-title">Instagram</div>
-      <div class="order-card-sub">@dkjhula_</div>
+      <div class="order-card-sub">@dkjhula_</div>                               <!-- ✏️ Instagram handle -->
     </a>
-    <!-- ✏️ EDIT #31 — Your city/location -->
     <div class="order-card">
       <div class="order-card-icon">📍</div>
       <div class="order-card-title">Location</div>
-      <div class="order-card-sub">Anand, Gujarat, India</div>
+      <div class="order-card-sub">Anand, Gujarat, India</div>                  <!-- ✏️ EDIT #31 Your city -->
     </div>
     <div class="order-card">
       <div class="order-card-icon">📦</div>
@@ -549,24 +469,20 @@ footer { background: var(--text-dark); padding: 40px; display: flex; align-items
 
 <!-- ============================================================
   ✏️ EDIT #32 — FOOTER
-  Update business name, owner name, year established
 ============================================================ -->
 <footer>
   <div class="footer-logo-wrap">
-    <!-- ✏️ EDIT #33 — Footer logo image file name -->
-    <img class="footer-logo-img" src="logo_png.jpg" alt="DK Jhula"/>
+    <img class="footer-logo-img" src="logo_png.jpg" alt="DK Jhula"/>   <!-- ✏️ EDIT #33 Logo file -->
     <div>
       <div class="footer-brand">DK <span>Jhula</span></div>
       <div class="footer-owner">by Daxaben K. Prajapati</div>
-      <!-- ✏️ EDIT #34 — Year established -->
-      <div class="footer-tagline">Handcrafted with Love · Est. 2009</div>
+      <div class="footer-tagline">Handcrafted with Love · Est. 2009 · Jay Shree Swaminarayan</div>  <!-- ✏️ EDIT #34 -->
     </div>
   </div>
   <div class="footer-links">
     <a href="#shop">Shop</a><a href="#about">About</a><a href="#feedback">Reviews</a><a href="#order">Contact</a>
   </div>
-  <!-- ✏️ EDIT #35 — Copyright year and business name -->
-  <div class="footer-copy">© 2026 DK Jhula. All rights reserved.</div>
+  <div class="footer-copy">© 2026 DK Jhula. All rights reserved.</div>  <!-- ✏️ EDIT #35 Copyright -->
 </footer>
 
 <div class="toast" id="toast">✓ Opening WhatsApp to place your order!</div>
@@ -574,63 +490,88 @@ footer { background: var(--text-dark); padding: 40px; display: flex; align-items
 <script>
 // ============================================================
 // ✏️ EDIT #36 — YOUR WHATSAPP NUMBER
-// Replace 916351551471 with 91 + your 10-digit number
-// Example: 919876543210
+// Format: 91 + 10-digit number (no spaces, no +)
 // ============================================================
 const WHATSAPP = "916351551471";
 
 // ============================================================
-// ✏️ EDIT #37 — COMMON PRODUCT DESCRIPTION
-// This D variable is used as default description for jhulas.
-// Change it to match your standard features.
+// ✏️ EDIT #37 — STANDARD JHULA DESCRIPTION
+// Used for most products. Change once to update all jhulas.
 // ============================================================
 const D = "Resham doori • Washable • Warranty • 150–200kg capacity • Customize colour, size & design";
 
 // ============================================================
-// ✏️ EDIT #19 — ADD YOUR PRODUCTS HERE
+// ✏️ EDIT #19 — YOUR PRODUCTS LIST
 //
-// HOW TO ADD A NEW PRODUCT:
-// Copy one block from { to }, paste it after the last one,
-// add a comma after the previous product's closing }
+// ═══════════════════════════════════════════════════════════
+// HOW TO ADD A NEW PRODUCT (step by step):
+//   1. Find the line that says "ADD NEW PRODUCTS BELOW THIS LINE"
+//   2. Copy this example line:
+//      { name: "Your Product Name", desc: D, price: "₹X,XXX", img: "p13.jpg", badge: "new", cat: "jhula" },
+//   3. Paste it below that line
+//   4. Change: name, price, img (photo file name), badge, cat
+//   5. Make sure the photo file is in the SAME FOLDER as index.html
+//   6. Save the file and upload to GitHub
 //
-// FIELDS:
-//   name   = Product name shown on card
-//   desc   = Short description (or use D for the standard one)
-//   price  = Price shown e.g. "₹2,999"
-//   img    = Your photo filename e.g. "p1.jpg"
-//            ⚠️ Photo must be in the SAME FOLDER as index.html!
-//   badge  = "best" (gold) | "new" (green) | "sale" (red) | "" (none)
-//   cat    = "jhula" | "baby" | "decor"
-//            (must match the filter buttons above)
+// HOW TO CHANGE A PRICE:
+//   Find the product name → change "₹X,XXX" to new price
 //
-// HOW TO REMOVE A PRODUCT: Delete from { to }, including the comma
-// HOW TO CHANGE PRICE: Just change the "₹..." text
-// HOW TO CHANGE PHOTO: Change the "p1.jpg" to your new file name
-// ============================================================
+// HOW TO REMOVE A PRODUCT:
+//   Delete the full line from { to }, including the comma after }
+//
+// BADGE OPTIONS:  "best" = gold  |  "new" = green  |  "sale" = red  |  "" = none
+// CATEGORY OPTIONS: "jhula"  |  "baby"  |  "decor"
+//   (must match the filter buttons in the shop section above)
+// ═══════════════════════════════════════════════════════════
 const products = [
-  { name: "Royal Canopy Jhula — Pink & White",        desc: D,   price: "₹4,500",  img: "p1.jpg",  badge: "best", cat: "jhula" },
-  { name: "Round Macramé Swing — Pink",               desc: D,   price: "₹2,999",  img: "p2.jpg",  badge: "new",  cat: "jhula" },
-  { name: "Luxury Round Daybed Swing — Red",          desc: D,   price: "₹12,650", img: "p3.jpg",  badge: "best", cat: "jhula" },
-  { name: "Baby Sleeping Jhula",                      desc: "Natural cotton • Wooden bead accents • Soft & safe for infants • Washable • Warranty", price: "₹3,999", img: "p4.jpg", badge: "best", cat: "baby" },
-  { name: "Boho Canopy Swing — Cream (Open)",         desc: D,   price: "₹9,500",  img: "p5.jpg",  badge: "new",  cat: "jhula" },
-  { name: "Boho Canopy Swing — Cream (Closed)",       desc: D,   price: "₹9,500",  img: "p6.jpg",  badge: "",     cat: "jhula" },
-  { name: "Rust Canopy Daybed Swing",                 desc: D,   price: "₹9,900",  img: "p7.jpg",  badge: "best", cat: "jhula" },
-  { name: "Cone Net Swing — Forest Green",            desc: D,   price: "₹3,560",  img: "p8.jpg",  badge: "new",  cat: "jhula" },
-  { name: "Royal Canopy Chair — Black & Gold",        desc: D,   price: "₹2,500",  img: "p9.jpg",  badge: "sale", cat: "jhula" },
-  { name: "Bell Jhula — Hot Pink",                    desc: D,   price: "₹4,100",  img: "p10.jpg", badge: "new",  cat: "jhula" },
-  { name: "Kids Square Swing — Blue & White",         desc: D,   price: "₹2,800",  img: "p11.jpg", badge: "new",  cat: "jhula" },
-  { name: "Macramé Ganesha Wall Art",                 desc: "Handknotted resham rope • Unique home décor • Customizable size & colour", price: "₹350", img: "p12.jpg", badge: "best", cat: "decor" },
+  { name: "Royal Canopy Jhula — Pink & White",  desc: D,   price: "₹4,500",  img: "p1.jpg",  badge: "best", cat: "jhula" },
+  { name: "Round Rope Swing — Pink",            desc: D,   price: "₹2,999",  img: "p2.jpg",  badge: "new",  cat: "jhula" },
+  { name: "Luxury Round Daybed Swing — Red",    desc: D,   price: "₹12,650", img: "p3.jpg",  badge: "best", cat: "jhula" },
+  { name: "Baby Sleeping Jhula",                desc: "Natural cotton • Wooden bead accents • Soft & safe for infants • Washable • Warranty", price: "₹3,999", img: "p4.jpg", badge: "best", cat: "baby" },
+  { name: "Boho Canopy Swing — Cream", desc: D, price: "₹9,500", imgs: ["p5.jpg","p6.jpg"], badge: "new", cat: "jhula" },
+  { name: "Rust Canopy Daybed Swing",           desc: D,   price: "₹9,900",  img: "p7.jpg",  badge: "best", cat: "jhula" },
+  { name: "Cone Net Swing — Forest Green",      desc: D,   price: "₹3,560",  img: "p8.jpg",  badge: "new",  cat: "jhula" },
+  { name: "Royal Canopy Chair — Black & Gold",  desc: D,   price: "₹2,500",  img: "p9.jpg",  badge: "sale", cat: "jhula" },
+  { name: "Bell Jhula — Hot Pink",              desc: D,   price: "₹4,100",  img: "p10.jpg", badge: "new",  cat: "jhula" },
+  { name: "Kids Square Swing — Blue & White",   desc: D,   price: "₹2,800",  img: "p11.jpg", badge: "new",  cat: "jhula" },
+  { name: "Hand-Knotted Ganesha Wall Decor",    desc: "Handknotted resham rope • Beautiful home decoration • Customizable size & colour", price: "₹350", img: "p12.jpg", badge: "best", cat: "decor" },
+
+  { name: "Relax & Nap Sleeping Jhula", desc: "Ideal for relaxing, light sleeping & gentle swinging. " + D, price: "₹3,600", img: "p13.jpg", badge: "best", cat: "jhula" },
+
+  // ✏️ ADD NEW PRODUCTS BELOW THIS LINE ↓
+  { name: "Wall Hanging Pot Holder — Cream", desc: "Handknotted resham rope • Wall mount with metal ring • Holds any standard pot • Beautiful tassel finish • Customize colour & size", price: "₹299", imgs: ["decor2a.jpg","decor2b.jpg"], badge: "new", cat: "decor" },
+  { name: "Hanging Plant Holder — Green", desc: "Handknotted resham rope • Ceiling hook style • Wooden bead detailing • Holds round pots perfectly • Customize colour", price: "₹100", imgs: ["decor3a.jpg","decor3b.jpg"], badge: "new", cat: "decor" },
+  { name: "Boho Shoulder Bag — Olive Green", desc: "Handknotted resham doori • Soft faux-fur lining inside • Spacious shoulder bag • Lightweight & strong • Customize colour", price: "₹499", img: "purse1.jpg", badge: "new", cat: "purse" },
+  { name: "Classic Hobo Bag — Deep Maroon", desc: "Handknotted resham doori • Rich maroon colour • Roomy crescent shape • Strong knotted strap • Customize colour & size", price: "₹499", img: "purse2.jpg", badge: "best", cat: "purse" },
+  { name: "Fringe Sling Bag — Hot Pink", desc: "Handknotted resham doori • Playful fringe detailing • Adjustable crossbody strap • Compact & cute • Customize colour", price: "₹299", img: "purse3.jpg", badge: "new", cat: "purse" },
+  // HOW TO ADD: Copy the line above, paste below, change name/price/img/badge/cat
+  // Example:
+  // { name: "Your New Product", desc: D, price: "₹X,XXX", img: "p14.jpg", badge: "new", cat: "jhula" },
+
 ];
-// ============================================================
-// END OF PRODUCTS — do not edit below this line
-// ============================================================
+// ✏️ END OF PRODUCTS — do not change anything below this line
 
 function renderProducts(items) {
-  document.getElementById('products-grid').innerHTML = items.map(p => `
+  document.getElementById('products-grid').innerHTML = items.map((p, pi) => {
+    const imgs = p.imgs || [p.img];
+    const hasSlider = imgs.length > 1;
+    const imgHTML = hasSlider
+      ? `<div class="slider-wrap" id="sw${pi}">
+          <div class="slider-track" id="st${pi}">
+            ${imgs.map((src,i) => `<img src="${src}" alt="${p.name}" loading="lazy"/>`).join('')}
+          </div>
+          <button class="slider-btn prev" onclick="slide(${pi},-1)">&#8249;</button>
+          <button class="slider-btn next" onclick="slide(${pi},1)">&#8250;</button>
+          <div class="slider-dots">
+            ${imgs.map((_,i) => `<button class="slider-dot${i===0?' active':''}" onclick="slideTo(${pi},${i})" id="sd-${pi}-${i}"></button>`).join('')}
+          </div>
+        </div>`
+      : `<img src="${imgs[0]}" alt="${p.name}" loading="lazy"/>`;
+    return `
     <div class="product-card">
       <div class="product-img">
         ${p.badge ? `<div class="product-badge badge-${p.badge}">${p.badge==='best'?'Bestseller':p.badge==='new'?'New':'Sale'}</div>` : ''}
-        <img src="${p.img}" alt="${p.name}" loading="lazy"/>
+        ${imgHTML}
       </div>
       <div class="product-body">
         <div class="product-name">${p.name}</div>
@@ -640,7 +581,8 @@ function renderProducts(items) {
           <button class="order-btn" onclick="orderProduct('${p.name}','${p.price}')">Order</button>
         </div>
       </div>
-    </div>`).join('');
+    </div>`;
+  }).join('');
 }
 
 function filterProducts(btn, cat) {
@@ -648,7 +590,6 @@ function filterProducts(btn, cat) {
   btn.classList.add('active');
   renderProducts(cat === 'all' ? products : products.filter(p => p.cat === cat));
 }
-
 function orderProduct(name, price) {
   const msg = encodeURIComponent(`Hi DK Jhula! 🙏\nI'd like to order:\n*${name}* (${price})\nPlease share availability, customization options & delivery details.`);
   window.open(`https://wa.me/${WHATSAPP}?text=${msg}`, '_blank');
@@ -656,16 +597,16 @@ function orderProduct(name, price) {
   t.classList.add('show');
   setTimeout(() => t.classList.remove('show'), 3000);
 }
-
-let feedbacks = [];
-let selectedRating = 5;
-window.onload = () => { setRating(5); };
-
+function notifyMe(name) {
+  const msg = encodeURIComponent(`Hi DK Jhula! 🙏\nI am interested in your upcoming product:\n*${name}*\nPlease notify me when it is available!`);
+  window.open(`https://wa.me/${WHATSAPP}?text=${msg}`, '_blank');
+}
+let feedbacks = JSON.parse(localStorage.getItem('dk_feedbacks') || '[]'), selectedRating = 5;
+window.onload = () => { setRating(5); renderFeedbacks(); };
 function setRating(n) {
   selectedRating = n;
   document.querySelectorAll('#star-select span').forEach((s, i) => s.classList.toggle('active', i < n));
 }
-
 function submitFeedback() {
   const name = document.getElementById('fb-name').value.trim();
   const email = document.getElementById('fb-email').value.trim();
@@ -674,11 +615,10 @@ function submitFeedback() {
   if (!name) { alert('Please enter your name.'); return; }
   if (!email || !email.includes('@')) { alert('Please enter a valid email.'); return; }
   if (!text) { alert('Please write your feedback.'); return; }
-  feedbacks.unshift({
-    name, product, rating: selectedRating, text,
+  feedbacks.unshift({ name, product, rating: selectedRating, text,
     email: email.replace(/(.{2})(.*)(@.*)/, (_, a, b, c) => a + b.replace(/./g,'*') + c),
-    date: new Date().toLocaleDateString('en-IN', { day:'numeric', month:'long', year:'numeric' })
-  });
+    date: new Date().toLocaleDateString('en-IN', { day:'numeric', month:'long', year:'numeric' }) });
+  localStorage.setItem('dk_feedbacks', JSON.stringify(feedbacks));
   document.getElementById('fb-name').value = '';
   document.getElementById('fb-email').value = '';
   document.getElementById('fb-product').value = '';
@@ -689,30 +629,69 @@ function submitFeedback() {
   setTimeout(() => s.style.display = 'none', 4000);
   renderFeedbacks();
 }
+// ✏️ CHANGE THIS PASSWORD
+const ADMIN_PASS = "dkjhula2024";
+let adminUnlocked = false;
 
+function adminLogin() {
+  const p = prompt("Enter admin password:");
+  if (p === ADMIN_PASS) { adminUnlocked = true; renderFeedbacks(); }
+  else alert("Wrong password!");
+}
+function deleteReview(i) {
+  if (!confirm("Delete this review?")) return;
+  feedbacks.splice(i, 1);
+  localStorage.setItem('dk_feedbacks', JSON.stringify(feedbacks));
+  renderFeedbacks();
+}
 function renderFeedbacks() {
   const list = document.getElementById('feedbacks-list');
   const count = document.getElementById('feedbacks-count');
-  if (!feedbacks.length) {
-    list.innerHTML = '<div class="no-feedback">No reviews yet. Share yours! 🌟</div>';
-    count.textContent = 'Be the first to leave a review!';
-    return;
-  }
-  count.textContent = `${feedbacks.length} review${feedbacks.length > 1 ? 's' : ''} from our customers`;
-  list.innerHTML = feedbacks.map(f => `
-    <div class="feedback-card">
-      <div class="feedback-card-header">
-        <div>
-          <div class="feedback-author">${f.name}</div>
-          ${f.product ? `<div class="feedback-product">Purchased: ${f.product}</div>` : ''}
+  if (!feedbacks.length) { list.innerHTML = '<div class="no-feedback">No reviews yet. Share yours! 🌟</div>'; count.textContent = 'Be the first to leave a review!'; }
+  else {
+    count.textContent = `${feedbacks.length} review${feedbacks.length > 1 ? 's' : ''} from our customers`;
+    list.innerHTML = feedbacks.map((f, i) => `
+      <div class="feedback-card">
+        <div class="feedback-card-header">
+          <div><div class="feedback-author">${f.name}</div>${f.product ? `<div class="feedback-product">Purchased: ${f.product}</div>` : ''}</div>
+          <div style="display:flex;align-items:center;gap:10px;">
+            <div class="feedback-stars">${'★'.repeat(f.rating)}${'☆'.repeat(5-f.rating)}</div>
+            ${adminUnlocked ? `<button class="admin-del-btn" onclick="deleteReview(${i})">🗑 Delete</button>` : ''}
+          </div>
         </div>
-        <div class="feedback-stars">${'★'.repeat(f.rating)}${'☆'.repeat(5-f.rating)}</div>
-      </div>
-      <div class="feedback-text">"${f.text}"</div>
-      <div class="feedback-date">${f.date} · ${f.email}</div>
-    </div>`).join('');
+        <div class="feedback-text">"${f.text}"</div>
+        <div class="feedback-date">${f.date} · ${f.email}</div>
+      </div>`).join('');
+  }
+  // Show/hide admin toggle button
+  const existing = document.getElementById('admin-toggle');
+  if (!existing) {
+    const btn = document.createElement('button');
+    btn.id = 'admin-toggle';
+    btn.className = 'admin-toggle-btn';
+    btn.textContent = adminUnlocked ? '🔓 Admin Mode ON' : '🔐 Admin';
+    btn.onclick = adminUnlocked ? () => { adminUnlocked = false; renderFeedbacks(); } : adminLogin;
+    document.getElementById('feedbacks-list').parentNode.appendChild(btn);
+  } else {
+    existing.textContent = adminUnlocked ? '🔓 Admin Mode ON' : '🔐 Admin';
+    existing.onclick = adminUnlocked ? () => { adminUnlocked = false; renderFeedbacks(); } : adminLogin;
+  }
 }
-
+const sliderState = {};
+function slide(pi, dir) {
+  const track = document.getElementById('st'+pi);
+  if (!track) return;
+  const total = track.children.length;
+  sliderState[pi] = ((sliderState[pi]||0) + dir + total) % total;
+  goSlide(pi, sliderState[pi]);
+}
+function goSlide(pi, idx) {
+  const track = document.getElementById('st'+pi);
+  if (!track) return;
+  sliderState[pi] = idx;
+  track.style.transform = `translateX(-${idx*100}%)`;
+  document.querySelectorAll('#sd'+pi+' .slider-dot').forEach((d,i) => d.classList.toggle('active', i===idx));
+}
 renderProducts(products);
 </script>
 </body>
