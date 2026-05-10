@@ -1,0 +1,127 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --radius: 0px;
+  }
+
+  * {
+    box-sizing: border-box;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-surface text-on-surface font-body antialiased overflow-x-hidden;
+  }
+
+  ::selection {
+    background-color: rgba(254, 210, 85, 0.22);
+    color: #1e1b14;
+  }
+
+  ::-webkit-scrollbar { width: 4px; }
+  ::-webkit-scrollbar-track { background: #fff8f1; }
+  ::-webkit-scrollbar-thumb { background: #cfc5bb; }
+  ::-webkit-scrollbar-thumb:hover { background: #7e766d; }
+}
+
+@layer components {
+  /* ── Heritage Editorial spacing (120px+) ───────────── */
+  .section-padding {
+    @apply px-8 py-[120px] md:px-12 lg:px-16;
+  }
+
+  .section-label {
+    @apply font-display text-[12px] font-semibold uppercase tracking-[0.1em] text-secondary mb-6;
+  }
+
+  .section-title {
+    @apply font-display text-[32px] md:text-[48px] font-extrabold text-on-surface leading-[1.2] tracking-[0.04em] mb-4;
+  }
+
+  .section-subtitle {
+    @apply font-body text-[18px] text-on-surface-variant leading-[1.6] max-w-xl;
+  }
+
+  /* ── Architectural buttons (0px radius) ────────────── */
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2
+           px-12 py-4 bg-primary text-on-primary
+           font-display text-[12px] tracking-[0.1em] uppercase font-semibold
+           transition-all duration-300 hover:bg-primary-container
+           active:scale-[0.98] cursor-pointer select-none;
+  }
+
+  .btn-outline {
+    @apply inline-flex items-center justify-center gap-2
+           px-12 py-4 bg-transparent text-on-surface
+           font-display text-[12px] tracking-[0.1em] uppercase font-semibold
+           transition-all duration-300 cursor-pointer select-none;
+    border-bottom: 1px solid #cfc5bb;
+  }
+
+  .btn-whatsapp {
+    @apply inline-flex items-center gap-2 bg-[#25D366] text-white
+           px-5 py-2.5 font-display text-[12px] font-semibold
+           tracking-wide transition-all duration-300 hover:bg-[#1da851] cursor-pointer;
+  }
+}
+
+/* ── Hero overlay ───────────────────────────────────────── */
+.hero-overlay {
+  background: linear-gradient(
+    155deg,
+    rgba(30, 27, 20, 0.88) 0%,
+    rgba(30, 27, 20, 0.25) 55%,
+    rgba(30, 27, 20, 0.70) 100%
+  );
+}
+
+/* ── Product card zoom ──────────────────────────────────── */
+.product-card-img img {
+  transition: transform 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+.product-card:hover .product-card-img img {
+  transform: scale(1.04);
+}
+
+/* ── Grain noise texture (3% opacity per design system) ── */
+.grain-overlay {
+  position: relative;
+}
+.grain-overlay::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.03;
+  mix-blend-mode: overlay;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 256 256'%3E%3Cfilter id='g'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23g)'/%3E%3C/svg%3E");
+  background-repeat: repeat;
+  background-size: 200px 200px;
+  z-index: 2;
+}
+
+/* ── Star rating ────────────────────────────────────────── */
+.star-btn {
+  @apply text-3xl cursor-pointer text-outline-variant transition-colors duration-150 select-none leading-none;
+}
+.star-btn.active {
+  @apply text-secondary;
+}
+
+/* ── Floating ───────────────────────────────────────────── */
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50%       { transform: translateY(-8px); }
+}
+.animate-float {
+  animation: float 5s ease-in-out infinite;
+}
